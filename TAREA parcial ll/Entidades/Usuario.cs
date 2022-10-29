@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Login
+namespace Entidades
 {
     public class Usuario
     {
@@ -12,6 +12,5 @@ namespace Login
         public string? Nombre { get; set; }
         public string? Clave { get; set; }
         public string? Correo { get; set; }
-
     }
 }

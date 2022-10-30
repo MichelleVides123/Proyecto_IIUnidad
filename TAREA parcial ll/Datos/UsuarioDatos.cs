@@ -150,5 +150,10 @@ namespace Datos
             }
             return elimino;
         }
+
+        public Task<bool> LoginAsync(string text1, string text2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -28,6 +28,18 @@ namespace Login
 
             UsuarioDatos userDatos = new UsuarioDatos();
 
+            bool valido = await userDatos.LoginAsync(correotextBox.Text,clavetextBox.Text);
+
+            if (valido)
+            {
+
+            }
+            else
+            {
+
+                MessageBox.Show("Datos incorrectos");
+            }
+
         }
     }
 }

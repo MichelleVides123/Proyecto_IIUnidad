@@ -13,12 +13,12 @@ namespace Datos
     {
 
 
-        public async Task<bool> LoginAsync(string codigo, string clave, string correo)
+        public async Task<bool> LoginAsync( string clave, string correo)
         {
             bool valido = false;
             try
             {
-                string sql = "SELECT 1 FROM usuario WHERE Codigo=@codigo AND Clave=@clave AND Correo=@correo";
+                string sql = "SELECT 1 FROM usuario WHERE  Clave=@clave AND Correo=@correo";
 
                 using (MySqlConnection _conexion = new MySqlConnection(CadenaConexion.Cadena))
                 {
@@ -26,7 +26,6 @@ namespace Datos
                     using (MySqlCommand comando = new MySqlCommand(sql, _conexion))
                     {
                         comando.CommandType = System.Data.CommandType.Text;
-                        comando.Parameters.Add("@Codigo", MySqlDbType.VarChar, 20).Value = codigo;
                         comando.Parameters.Add("@Clave", MySqlDbType.VarChar, 20).Value = clave;
                         comando.Parameters.Add("@Correo", MySqlDbType.VarChar, 20).Value = correo;
 
@@ -151,9 +150,6 @@ namespace Datos
             return elimino;
         }
 
-        public Task<bool> LoginAsync(string text1, string text2)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

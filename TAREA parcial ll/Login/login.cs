@@ -28,11 +28,13 @@ namespace Login
 
             UsuarioDatos userDatos = new UsuarioDatos();
 
-            bool valido = await userDatos.LoginAsync(correotextBox.Text,clavetextBox.Text);
+            bool valido = await userDatos.LoginAsync(correotextBox.Text, clavetextBox.Text);
 
             if (valido)
             {
-
+                menu formulario = new menu();
+                Hide();
+                formulario.Show();
             }
             else
             {
